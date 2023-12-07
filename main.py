@@ -22,12 +22,12 @@ if response.status_code == 200:
         country_data['population']  = tds[2].text
         country_data['land-aria'] = tds[4].text
         countries.append(country_data)
-        print(country_data)
+        # print(country_data)
     # Create a DataFrame from the array of dictionaries
     df = pd.DataFrame(countries)
 
     # Save the DataFrame to an Excel file
-    df.to_excel('population_data.xlsx', index=False)
+    df.to_excel('world_population_data.xlsx', index=False)
     
 else:
     print(f"Failed to retrieve the page. Status code: {response.status_code}")
